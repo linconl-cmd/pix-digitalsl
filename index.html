@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagamento via PIX | Digital Solutions - LC Flix</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f1a2f, #1a2b4a);
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #121e33;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      max-width: 500px;
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+      border: 1px solid #2c3e5f;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #4fc3f7;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      color: #ff9800;
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #b0bec5;
+      margin-bottom: 20px;
+    }
+
+    .pix-icon {
+      font-size: 60px;
+      color: #00bfa5;
+      margin-bottom: 20px;
+    }
+
+    .info-group {
+      background: #1a2b40;
+      border: 1px solid #4fc3f7;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .info-group strong {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .chave-container {
+      background: #1a2b40;
+      border: 1px solid #4fc3f7;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .chave {
+      font-family: 'Courier New', monospace;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: #ffffff;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      background-color: #4fc3f7;
+      color: #0f1a2f;
+      border: none;
+      padding: 10px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .copy-btn:hover {
+      background-color: #29b6f6;
+      transform: translateY(-2px);
+    }
+
+    .copy-btn.copied {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    /* Estilo do QR Code (imagem) */
+    .qr-box {
+      margin: 25px 0;
+      padding: 15px;
+      background: #1a2b40;
+      border-radius: 10px;
+      border: 1px dashed #4fc3f7;
+      display: inline-block;
+    }
+
+    .qr-box img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Botões principais */
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 25px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: #4fc3f7;
+      color: #0f1a2f;
+    }
+
+    .btn-primary:hover {
+      background-color: #29b6f6;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: #b0bec5;
+      border: 2px solid #4fc3f7;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(79, 195, 247, 0.1);
+      color: #ffffff;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #78909c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo da Empresa -->
+    <div class="logo">
+      <i class="fas fa-cube"></i>
+      <span>Digital Solutions</span>
+    </div>
+
+    <!-- Ícone do Pix -->
+    <div class="pix-icon">
+      <i class="fab fa-pix"></i>
+    </div>
+
+    <!-- Título -->
+    <h1>Obrigado pelo seu pagamento! 🎉</h1>
+
+    <p>Seu apoio é essencial para continuarmos oferecendo um serviço de qualidade na <strong>Digital Solutions</strong>.</p>
+
+    <!-- Dados do recebedor -->
+    <div class="info-group">
+      <strong>Recebedor</strong>
+      Linconl Cristino Azevedo
+    </div>
+
+    <!-- Chave PIX com botão de copiar -->
+    <div class="info-group">
+      <strong>Chave PIX (CNPJ)</strong>
+      <div class="chave" id="chavePix">45413951000120</div>
+      <button class="copy-btn" id="copyBtn">
+        <i class="fas fa-copy"></i> Copiar Chave
+      </button>
+    </div>
+
+    <!-- QR Code (IMAGEM) - 🔻 COLE A IMAGEM GERADA PELO BANCO AQUI 🔻 -->
+    <div>
+      <strong>No App do seu banco escaneie o QR Code para pagar</strong>
+      <div class="qr-box">
+        <img src="pix nubank cnpj.PNG" alt="QR Code PIX" />
+      </div>
+    </div>
+
+    <!-- Agradecimento e ações -->
+    <p style="margin-top: 20px; font-style: italic; color: #a0d8f1;">
+      "Cada contribuição nos motiva a melhorar cada dia mais!"
+    </p>
+
+    <!-- Botões de navegação -->
+    <div class="btn-container">
+      <a href="https://links.digitalsl.com.br/" target="_blank" class="btn btn-primary">
+        <i class="fas fa-link"></i> Acesse nossos Links Importantes
+      </a>
+
+      <a href="https://g.page/r/CckukVPeuTDnEBM/review" target="_blank" class="btn btn-outline">
+        <i class="fas fa-star"></i> Avalie-nos no Google ❤️
+      </a>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="footer">
+      &copy; 2025 Digital Solutions. Todos os direitos reservados.
+    </div>
+  </div>
+
+  <!-- Script para copiar a chave -->
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const chavePixElement = document.getElementById('chavePix');
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(chavePixElement.textContent)
+        .then(() => {
+          const icon = copyBtn.querySelector('i');
+          const text = copyBtn.querySelector('span');
+
+          // Muda o botão para "Copiado!"
+          copyBtn.classList.add('copied');
+          icon.classList.remove('fa-copy');
+          icon.classList.add('fa-check');
+          text.textContent = 'Copiado!';
+
+          // Volta após 2 segundos
+          setTimeout(() => {
+            copyBtn.classList.remove('copied');
+            icon.classList.remove('fa-check');
+            icon.classList.add('fa-copy');
+            text.textContent = 'Copiar Chave';
+          }, 2000);
+        })
+        .catch(err => {
+          console.warn('Falha ao copiar. Erro: ', err);
+        });
+    });
+  </script>
+</body>
+</html>
